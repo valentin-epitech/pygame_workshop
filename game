@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+# get started with pygame : https://www.pygame.org/wiki/GettingStarted
+
 from os import stat
 from re import S
 import pygame
