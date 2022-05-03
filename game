@@ -25,13 +25,18 @@ SCREEN_HEIGHT = 720
 
 # initialize the size of the window here
 
-# initialisa the building of the game
+pygame.mixer.init()
+pygame.init()
 
 class PlayerOne(pygame.sprite.Sprite):
     def __init__(self):
-        # init the first player with the good width and height
+        # init the first player's position with self.surf.get_rect()
+        # set it's texture with pygame.image.load()
+        
     def update(self, pressed_keys):
         # move the player with arrow cases
+    
+    # set variables to be used later (like self.hp for exemple ?)
 
 class PlayerTwo(pygame.sprite.Sprite):
     def __init__(self):
