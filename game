@@ -30,12 +30,24 @@ pygame.init()
 
 class PlayerOne(pygame.sprite.Sprite):
     def __init__(self):
-        # init the first player's position with self.surf.get_rect()
+        super(PlayerOne, self).__init__()
         # set it's texture with pygame.image.load()
+        self.surf = pygame.image.load("source_file").convert_alpha()
+        self.surf.set_colorkey((255, 255, 255), RLEACCEL)
+        # init the first player's position with self.surf.get_rect()
+        self.rect = self.surf.get_rect(center=(
+                # horizontal potion
+                # vertical potion
+            ))
         
     def update(self, pressed_keys):
-        # move the player with arrow cases
-    
+        if pressed_keys[K_q]:
+            # move left using self.rect.move_ip()
+        if pressed_keys[K_d]:
+            # move right using self.rect.move_ip()
+
+        # you also need to check that the sprite doesn't leave the screen !!!
+
     # set variables to be used later (like self.hp for exemple ?)
 
 class PlayerTwo(pygame.sprite.Sprite):
@@ -70,6 +82,27 @@ def display_score(SCORE, X, player):
     # init the score of the player and display it
 
 def game():
+    # initialise the adding of ennemies
+
+    # putting sprites in groups of sprites
+    player = PlayerOne()
+    player2 = PlayerTwo()
+    background = pygame.sprite.Group()
+    background.add(Background())
+    all_sprites = pygame.sprite.Group()
+    all_sprites.add(background)
+    all_sprites.add(player)
+    all_sprites.add(player2)
+
+    # handle music
+
+    # loop
+
+        # handle collisions (pygame.sprite.spritecollide())
+        # hande sprites removal
+        # handle sound effects
+
+
     # create the game with features and the gameplay
 
 def display_game_over(PLAYER):
